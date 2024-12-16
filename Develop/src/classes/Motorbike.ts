@@ -28,7 +28,7 @@ class Motorbike extends Vehicle {
     wheels: Wheel[]
   ) {
     // TODO: The constructor should call the constructor of the parent class, Vehicle
-    super(vin, color, make, model, year, weight, topSpeed);
+    super();
 
     // TODO: The constructor should initialize the properties of the Motorbike class
     // TODO: The constructor should check if the wheels array has 2 elements and create 2 new default Wheel objects if it does not
@@ -52,7 +52,7 @@ class Motorbike extends Vehicle {
   // TODO: The method should call the printDetails method of the parent class
   // TODO: The method should log the details of the Motorbike
   // TODO: The details should include the VIN, make, model, year, weight, top speed, color, and wheels
-  printDetails(): void {
+  override printDetails(): void {
     super.printDetails(); // Call the parent class's printDetails method
     console.log(`VIN: ${this.vin}`);
     console.log(`Make: ${this.make}`);

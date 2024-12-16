@@ -38,9 +38,8 @@ class Car extends Vehicle {
     this.topSpeed = topSpeed;
     // Check if the wheels array has 4 elements
     // If not, create 4 new Wheel objects
-    // Otherwise, use the provided wheels array
-    if (wheels.length !== 4) {
-      this.wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
+    if (wheels.length !== 4 || !wheels.every(wheel => wheel instanceof Wheel)) {
+      this.wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()]; // Default to 4 Wheels
     } else {
       this.wheels = wheels;
     }

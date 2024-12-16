@@ -175,20 +175,20 @@ class Cli {
         // TODO: push the truck to the vehicles array
         // TODO: set the selectedVehicleVin to the vin of the truck
         // TODO: perform actions on the truck
-        const truck = new Truck(
-          Cli.generateVin(),
-          answers.color,
-          answers.make,
-          answers.model,
-          parseInt(answers.year),
-          parseInt(answers.weight),
-          parseInt(answers.topSpeed),
-          parseInt(answers.towingCapacity)
-        );
-        this.vehicles.push(truck);
-        this.selectedVehicleVin = truck.vin;
-        this.performActions();
-      });
+          const truck = new Truck(
+            Cli.generateVin(),
+            answers.color,
+            answers.make,
+            answers.model,
+            parseInt(answers.year),
+            parseInt(answers.weight),
+            parseInt(answers.topSpeed),
+            parseInt(answers.towingCapacity)
+            );
+          this.vehicles.push(truck);
+          this.selectedVehicleVin = truck.vin;
+          this.performActions();
+        });
   }
 
   // method to create a motorbike
@@ -259,8 +259,8 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          new Wheel(answers.frontWheelDiameter, answers.frontWheelBrand),
-          new Wheel(answers.rearWheelDiameter, answers.rearWheelBrand)
+          new Wheel(parseInt(answers.frontWheelDiameter), answers.frontWheelBrand),
+          new Wheel(parseInt(answers.rearWheelDiameter), answers.rearWheelBrand)
         );
         this.vehicles.push(motorbike);
         this.selectedVehicleVin = motorbike.vin;
@@ -283,8 +283,7 @@ class Cli {
               value: vehicle,
             };
           }),
-        },
-      ])
+        }])
       .then((answers) => {
         // TODO: check if the selected vehicle is the truck
         // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
@@ -295,7 +294,11 @@ class Cli {
           return;
         }
         // Add the towing logic here
-        console.log(`Towing ${answers.vehicleToTow.make} ${answers.vehicleToTow.model}`);
+        if (answers.vehicleToTow instanceof Truck) {
+          console.log("You can only tow a non-truck vehicle.");
+        } else {
+          console.log(`Towing ${answers.vehicleToTow.make} ${answers.vehicleToTow.model}`);
+        }
         this.performActions();
       });
   }

@@ -25,11 +25,28 @@ class Truck extends Vehicle implements AbleToTow {
   // TODO: The constructor should call the constructor of the parent class, Vehicle
     // TODO: The constructor should initialize the properties of the Truck class
     // TODO: The constructor should check if the wheels array has 4 elements and create 4 new default Wheel objects if it does not
-  super(vin, color, make, model, year, weight, topSpeed);
+    constructor(vin: string, color: string, make: string, model: string, year: number, weight: number, topSpeed: number, wheels: Wheel[], towingCapacity: number) {
+    super();
+    this.vin = vin;
+    this.color = color;
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.weight = weight;
+    this.topSpeed = topSpeed;
+    this.towingCapacity = towingCapacity;
+
+    // Check if the wheels array has 4 elements and create 4 new default Wheel objects if it does not
+    if (wheels.length !== 4) {
+      this.wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
+    } else {
+      this.wheels = wheels;
+    }
+  }
 
   // TODO: Implement the tow method from the AbleToTow interface
   tow(vehicle: Truck | Motorbike | Car): void {
-    // TODO: Get the make an model of the vehicle if it exists
+    // TODO: Get the make and model of the vehicle if it exists
     const vehicleMake = vehicle.make;
     const vehicleModel = vehicle.model;
 
@@ -47,7 +64,7 @@ class Truck extends Vehicle implements AbleToTow {
     // TODO: The method should call the printDetails method of the parent class
     // TODO: The method should log the details of the Truck
     // TODO: The details should include the VIN, make, model, year, weight, top speed, color, towing capacity, and wheels
-    printDetails(): void {
+    override printDetails(): void {
       super.printDetails(); // Call the parent class's printDetails method
       console.log(`VIN: ${this.vin}`);
       console.log(`Make: ${this.make}`);
