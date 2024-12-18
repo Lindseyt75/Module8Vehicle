@@ -1,25 +1,27 @@
 # Module8Vehicle
-Description
+Description:
 TypeScript
 
-Video walk through
+Video walk through:
+https://drive.google.com/file/d/1Tmnsaqd4qWDZRTE0OIz0uvc0xsWR0krd/view
 
-Installation or run command
+
+Installation or run command:
 npm run start
 
-Usage
+Usage:
 TypeScript
 
-Contributing
+Contributing:
 Modules and Github pages
 
-Languages
+Languages:
 TypeScript
 
-License
-This project is licensed under the MIT license.
+License:
+This project is licensed under the MIT License.
 
-Questions
+Questions:
 For any questions, please reach out:
 
 GitHub: Lindseyt75
