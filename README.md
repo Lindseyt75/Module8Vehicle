@@ -2,8 +2,11 @@
 Description
 TypeScript
 
-Installation
-npm i inquirer@8, 2. npm i colors, 3. npm i, 4. node index.js TypeScript
+Video walk through
+
+Installation or run command
+npm run start
+
 Usage
 TypeScript
 
@@ -11,10 +14,10 @@ Contributing
 Modules and Github pages
 
 Languages
-JavaScript, Node.js, TypeScript
+TypeScript
 
 License
-This project is licensed under the MIT License license.
+This project is licensed under the MIT license.
 
 Questions
 For any questions, please reach out:
